@@ -20,6 +20,10 @@ body, html {
     font-size: 18px;
 }
 
+html {
+    overflow-x: hidden;
+}
+
 header {
     background-color: #580000;
     padding: 16px 8px;
@@ -61,7 +65,7 @@ header h1 {
 
 .imagem {
     display: block;
-    width: 102%;
+    width: 103%;
     padding-bottom: 30px;
     transform: translateX(-19px);
     margin-bottom: -70px;
@@ -82,35 +86,222 @@ section h2 {
     margin-top: 65px;
 }
 
-.container .ranks {
-    width: 50%;
-    margin-top: 10px;
-    margin-bottom: 10px;
-} 
+.elo {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Espaçamento entre os itens */
+}
+
+.elo li {
+    display: inline-block;
+    list-style-type: none;
+    text-align: center;
+    width: 120px; /* Ajuste a largura conforme o espaço necessário */
+    margin-bottom: 20px;
+}
+
+.elo img {
+    display: block;
+    margin: 0 auto;
+    margin-top: 16px;
+    width: 50px; /* Tamanho das imagens */
+    height: auto; /* Mantém a proporção das imagens */
+}
+
+.elo p {
+    margin-top: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+}
 
 section .agents {
-    width: 47%;
+    width: 56%;
     margin-top: 60px;
-    margin-left: 45%;
+    margin-left: 40%;
     position: absolute;
     border-radius: 8%;
+}
+
+#imagem-exibida {
+    width: 56%; /* Ajuste conforme necessário */
+    height: auto; /* Manter proporção */
+    transition: opacity 0.2s ease-in-out; /* Transição suave para a opacidade */
+    opacity: 1; /* Opacidade padrão */
+}
+
+/* Ajustes para telas menores */
+@media (max-width: 768px) {
+    section {
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
 .texto {
     max-width: 50%;
     padding-bottom: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box;
+    flex: 1;
 }
 
-.container .maps {
-    width: 20%;
-    margin-top: -20px;
-    margin-left: 515px;
+.texto li {
+    cursor: pointer;
+}
+
+.texto li:hover {
+    text-decoration: underline;
+}
+
+/* Ajustando o contêiner das imagens e centralizando a lista */
+.image-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;  /* Centraliza as imagens verticalmente */
+    margin-top: 20px;
+    width: 90%; /* Ajusta a largura do contêiner das imagens */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Reduzindo o tamanho das imagens */
+#imagem-principal, #imagem-minimapa {
+    width: 49%;  /* Diminui o tamanho das imagens para 40% da largura */
+    height: auto;
+    transition: opacity 0.2s ease-in-out;
+    opacity: 1;
+}
+
+.list ul {
+    display: flex;
+    justify-content: center; /* Centraliza os itens horizontalmente */
+    list-style: none; /* Remove as bolinhas da lista */
+    padding: 0;
+    margin: 0;
+}
+
+.list li {
+    margin: 0 15px; /* Espaçamento entre os itens */
+    cursor: pointer;
+}
+
+.list li:hover {
+    text-decoration: underline;
+}
+
+/* Ajustes para telas menores */
+@media (max-width: 768px) {
+    .image-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #imagem-principal, #imagem-minimapa {
+        width: 80%;  /* Aumenta o tamanho das imagens para 80% da largura em telas pequenas */
+        margin-bottom: 20px;
+    }
+
+    .list {
+        max-width: 100%;  /* Ocupa a largura total da tela em dispositivos menores */
+        margin-left: 0;
+        text-align: center;
+    }
+}
+
+.container-flex {
+    display: flex;
+}
+
+.lista-veiculos {
+    flex-wrap: wrap;
+}
+
+.lista-veiculos li {
+    list-style: none;
+    max-width: 30%;
+    margin-bottom: 24px;
+}
+
+#news {
+    padding: 20px;
+    width: 100%; 
+    box-sizing: border-box; 
+}
+
+.news {
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center; 
+}
+
+.news img {
+    width: 100%; 
+    height: auto;
+    margin-top: 14px;
+    cursor: pointer;
+    transition: transform 0.3s ease; 
+}
+
+.news img:hover {
+    transform: scale(1.05); 
+}
+
+.news .noticia {
+    text-align: center;
+    background-color: #2b2b2b;
+    flex: 1 1 45%; 
+    padding: 15px;
+    min-width: 450px; 
+    margin-bottom: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.news .noti {
+    position: relative;
+    max-height: 300px;
+    overflow: hidden;
+}
+
+.overlay-imagem-link {
+    padding: 16px;
+    background-color: rgba(0, 0, 0, 0.7);
     position: absolute;
-    border-radius: 10%;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    transition: all ease 0.5s;
 }
 
-.news h3 {
-    margin-top: 30px;
+.overlay-imagem-link a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.news .noti:hover .overlay-imagem-link {
+    opacity: 1;
+}
+
+.lista-veiculos li h3 {
+    margin: 16px 0;
+}
+
+.item-central {
+    margin: 0 5%;
+}
+
+.news button {
+    display: inline-block;
+    background-color: #580000;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    text-align: center;
 }
 
 button {
@@ -123,6 +314,7 @@ button {
     margin-bottom: 8px;
     padding: 8px;
     border-radius: 10px;
+    transition: background-color 0.3s;
 }
 
 button a {
@@ -133,7 +325,7 @@ button a {
 }
 
 button:hover {
-    background-color: #850000;
+    background-color: #a00000;
 }
 
 .book h3 {
@@ -145,9 +337,43 @@ button:hover {
     margin-bottom: 20px;
 }
 
-embed {
-    width: 95%;
-    height: 850px
+/* Container geral do PDF */
+#pdf-container {
+    width: 80%;
+    margin: auto;
+    border-radius: 10px;
+}
+
+/* Estilo para o próprio PDF embutido */
+canvas {
+    display: block; /* Remove o espaço extra ao redor do canvas */
+    margin: 0 auto; /* Centraliza o canvas */
+    width: 100%; /* Altera para width 100% para ocupar todo o espaço */
+    height: auto; /* Permite que o canvas ajuste sua altura automaticamente */
+}
+
+/* Controles do PDF */
+#pdf-controls {
+    margin-top: 20px;       /* Adiciona um espaço entre o PDF e os botões */
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;              /* Espaço entre os botões */
+}
+
+#pdf-controls button {
+    padding: 10px 20px;
+    background-color: #580000;
+    color: #FAEBEB;
+    border: none;
+    cursor: pointer;
+    font-size: large;
+    border-radius: 5px;
+}
+
+#pdf-controls button:hover {
+    background-color: #a00000;
 }
 
 .form-container {
@@ -191,10 +417,27 @@ input[type="submit"] {
     border-radius: 4px;
     cursor: pointer;
     font-weight: bold;
+    transition: background-color 0.3s;
 }
 
 input[type="submit"]:hover {
-    background-color: #850000;
+    background-color: #a00000;
+}
+
+.notification {
+    display: none; /* Escondido por padrão */
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background-color: #4CAF50; /* Verde para sucesso */
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    z-index: 1000; /* Para garantir que fique sobre outros elementos */
+}
+
+.notification.show {
+    display: block; /* Exibe a notificação quando necessário */
 }
 
 footer {

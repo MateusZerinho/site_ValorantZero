@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Valorant Zero</title>
     <link rel="stylesheet" href="main.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.15.349/pdf.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
@@ -56,8 +57,19 @@
                     <li><p><strong>Sem classificação: </strong>VALORANT Padrão. Alterne entre Ataque e Defesa na metade da partida. Plante ou desarme a Spike, ou elimine a equipe inimiga para vencer rodadas. Vence quem ganhar 13 rodadas primeiro.</p></li>
                     <br>
                     <li><p><strong>Competitivo: </strong>VALORANT Padrão com classificação ranqueada. Coloque suas habilidades à prova e suba nos ranques. Alterne entre Ataque e Defesa na metade da partida. Plante ou desarme a Spike, ou elimine a equipe inimiga para vencer rodadas. Vence quem ganhar 13 rodadas primeiro.</p></li>
-                    <p>Os ranks VALORANT são:</p>
-                    <img class="ranks" src="imagens/ranks.jpg" alt="ranks">
+                    <p>Os ranques são:</p>
+                    <br>
+                    <ul class="elo">
+                        <li><p><strong>Ferro: </strong><img src="imagens/Iron_3_Rank.png" alt="ferro 3">Ferro III <img src="imagens/Iron_2_Rank.png" alt="ferro 2">Ferro II <img src="imagens/Iron_1_Rank.png" alt="ferro 1">Ferro I</p></li>
+                        <li><p><strong>Bronze: </strong><img src="imagens/Bronze_3_Rank.png" alt="bronze 3">Bronze III <img src="imagens/Bronze_2_Rank.png" alt="bronze 2">Bronze II <img src="imagens/Bronze_1_Rank.png" alt="bronze 1">Bronze I</p></li>
+                        <li><p><strong>Prata: </strong><img src="imagens/Silver_3_Rank.png" alt="prata 3">Prata III <img src="imagens/Silver_2_Rank.png" alt="prata 2">Prata II <img src="imagens/Silver_1_Rank.png" alt="prata 1">Prata I</p></li>
+                        <li><p><strong>Ouro: </strong><img src="imagens/Gold_3_Rank.png" alt="ouro 3">Ouro III <img src="imagens/Gold_2_Rank.png" alt="ouro 2">Ouro II <img src="imagens/Gold_1_Rank.png" alt="ouro 1">Ouro I</p></li>
+                        <li><p><strong>Platina: </strong><img src="imagens/Platinum_3_Rank.png" alt="platina 3">Platina III <img src="imagens/Platinum_2_Rank.png" alt="platina 2">Platina II <img src="imagens/Platinum_1_Rank.png" alt="platina 1">Platina I</p></li>
+                        <li><p><strong>Diamante: </strong><img src="imagens/Diamond_3_Rank.png" alt="diamante 3">Diamante III <img src="imagens/Diamond_2_Rank.png" alt="diamante 2">Diamante II <img src="imagens/Diamond_1_Rank.png" alt="diamante 1">Diamante I</p></li>
+                        <li><p><strong>Ascendente: </strong><img src="imagens/Ascendant_3_Rank.png" alt="ascendente 3">Ascendente III <img src="imagens/Ascendant_2_Rank.png" alt="ascendente 2">Ascendente II <img src="imagens/Ascendant_1_Rank.png" alt="ascendente 1">Ascendente I</p></li>
+                        <li><p><strong>Imortal: </strong><img src="imagens/Immortal_3_Rank.png" alt="imortal 3">Imortal III <img src="imagens/Immortal_2_Rank.png" alt="imortal 2">Imortal II <img src="imagens/Immortal_1_Rank.png" alt="imortal 1">Imortal I</p></li>
+                        <li><p><strong>Radiante: </strong><img src="imagens/Radiant_Rank.png" alt="radiante">Top 500 da região</p></li>
+                    </ul>
                     <br>
                     <li><p><strong>Frenético: </strong>Partidas mais curtas de VALORANT com economia simplificada. Plante ou desarme a Spike, ou elimine a equipe inimiga para vencer rodadas. Vence quem ganhar 5 rodadas primeiro.</p></li>
                     <br>
@@ -80,50 +92,52 @@
     </section>
     <section id="agents">
         <div class="container">
-            <h2>Agentes</h2>
-            <img class="agents" src="imagens/agentes.png" alt="agentes">
+            <h2 style="cursor: pointer;">Agentes</h2>
+            <!-- Onde a imagem vai aparecer -->
+            <img id="imagem-exibida" class="agents" src="imagens/agentes.png" alt="agentes">
             <div class="texto">
                 <article>
                     <p>Os agentes são personagens jogáveis, cada um com um conjunto único de habilidades. Eles são divididos em quatro categorias:</p>
                     <br>
                     <p><strong>Duelistas: </strong>Especializados em combate direto e eliminação de oponentes.</p>
                     <ul>
-                        <li>Jett</li>
-                        <li>Raze</li>
-                        <li>Phoenix</li>
-                        <li>Reyna</li>
-                        <li>Yoru</li>
-                        <li>Neon</li>
-                        <li>Iso</li>
+                        <li data-imagem="imagens/jett.png">Jett</li>
+                        <li data-imagem="imagens/raze.png">Raze</li>
+                        <li data-imagem="imagens/phoenix.png">Phoenix</li>
+                        <li data-imagem="imagens/reyna.png">Reyna</li>
+                        <li data-imagem="imagens/yoru.png">Yoru</li>
+                        <li data-imagem="imagens/neon.png">Neon</li>
+                        <li data-imagem="imagens/iso.png">Iso</li>
                     </ul>
                     <br>
                     <p><strong>Controladores: </strong>Controlam áreas do mapa para negar a movimentação inimiga.</p>
                     <ul>
-                        <li>Omen</li>
-                        <li>Brimstone</li>
-                        <li>Viper</li>
-                        <li>Astra</li>
-                        <li>Harbor</li>
-                        <li>Clove</li>
+                        <li data-imagem="imagens/omen.png">Omen</li>
+                        <li data-imagem="imagens/brimstone.png">Brimstone</li>
+                        <li data-imagem="imagens/viper.png">Viper</li>
+                        <li data-imagem="imagens/astra.png">Astra</li>
+                        <li data-imagem="imagens/harbor.png">Harbor</li>
+                        <li data-imagem="imagens/clove.png">Clove</li>
                     </ul>
                     <br>
                     <p><strong>Iniciadores: </strong>Criam oportunidades para sua equipe entrar em combate.</p>
                     <ul>
-                        <li>Breach</li>
-                        <li>Sova</li>
-                        <li>Skye</li>
-                        <li>Kay/O</li>
-                        <li>Fade</li>
-                        <li>Gekko</li>
+                        <li data-imagem="imagens/breach.png">Breach</li>
+                        <li data-imagem="imagens/sova.png">Sova</li>
+                        <li data-imagem="imagens/skye.png">Skye</li>
+                        <li data-imagem="imagens/kayo.png">Kay/O</li>
+                        <li data-imagem="imagens/fade.png">Fade</li>
+                        <li data-imagem="imagens/gekko.png">Gekko</li>
                     </ul>
                     <br>
                     <p><strong>Sentinelas: </strong>Especializados em defesa e proteção de áreas.</p>
                     <ul>
-                        <li>Sage</li>
-                        <li>Cypher</li>
-                        <li>Killjoy</li>
-                        <li>Chamber</li>
-                        <li>Deadlock</li>
+                        <li data-imagem="imagens/sage.png">Sage</li>
+                        <li data-imagem="imagens/cypher.png">Cypher</li>
+                        <li data-imagem="imagens/killjoy.png">Killjoy</li>
+                        <li data-imagem="imagens/chamber.png">Chamber</li>
+                        <li data-imagem="imagens/deadlock.png">Deadlock</li>
+                        <li data-imagem="imagens/vyse.png">Vyse</li>
                     </ul>
                 </article>
             </div>
@@ -131,29 +145,44 @@
     </section>
     <section id="maps">
         <div class="container">
-            <h2>Mapas</h2>
+            <h2 style="cursor: pointer;">Mapas</h2>
             <article>
                 <p>Se você está começando a jogar agora, conhecer todos os mapas do VALORANT é muito importante. O jogo faz a escolha dos mapas de forma aleatória a cada partida, então você não tem controle sobre onde vai jogar. Além disso, anualmente a Riot está lançando mapas novos no jogo.</p>
                 <br>
                 <p>A seguir, vamos te mostrar todos os mapas do VALORANT já atualizados para 2024! Veja quais são, quais saíram da rotação.</p>
                 <br>
                 <p>Quais são os mapas do VALORANT?</p>
-                <img class="maps" src="imagens/mapas.jfif" alt="mapas">
                 <br>
                 <div class="list">
                     <ul>
-                        <li>Bind</li>
-                        <li>Abyss</li>
-                        <li>Ascent</li>
-                        <li>Icebox</li>
-                        <li>Sunset</li>
-                        <li>Haven</li>
-                        <li>Lotos</li>
-                        <li>Breeze (fora da rotação atual)</li>
-                        <li>Split (fora da rotação atual)</li>
-                        <li>Fracture (fora da rotação atual)</li>
-                        <li>Pearl (fora da rotação atual)</li>
+                        <strong><li data-imagens="imagens/Abyss.webp" data-image="imagens/Abyss-minimap.png">Abyss</li></strong>
+                        <br>
+                        <strong><li data-imagens="imagens/Ascent.webp" data-image="imagens/Ascent-minimap.png">Ascent</li></strong>
+                        <br>
+                        <strong><li data-imagens="imagens/Bind.webp" data-image="imagens/Bind-minimap.png">Bind</li></strong>
+                        <br>
+                        <strong><li data-imagens="imagens/Breeze.png" data-image="imagens/Breeze-minimap.png">Breeze</li></strong>
+                        <br>
+                        <strong><li data-imagens="imagens/Fracture.webp" data-image="imagens/Fracture-minimap.png">Fracture</li></strong>
+                        <br>
+                        <strong><li data-imagens="imagens/Haven.webp" data-image="imagens/Haven-minimap.png">Haven</li></strong>
+                        <br>
+                        <strong><li data-imagens="imagens/Icebox.webp" data-image="imagens/Icebox-minimap.png">Icebox</li></strong>
+                        <br>
+                        <strong><li data-imagens="imagens/Lotus.webp" data-image="imagens/Lotus-minimap.png">Lotus</li></strong>
+                        <br>
+                        <strong><li data-imagens="imagens/Pearl.webp" data-image="imagens/Pearl-minimap.png">Pearl</li></strong>
+                        <br>
+                        <strong><li data-imagens="imagens/Split.jpg" data-image="imagens/Split-minimap.png">Split</li></strong>
+                        <br>
+                        <strong><li data-imagens="imagens/Sunset.png" data-image="imagens/Sunset-minimap.png">Sunset</li></strong>
                     </ul>
+                </div>
+                <br>
+                <!-- Contêiner para agrupar as duas imagens -->
+                <div class="image-container">
+                    <img id="imagem-principal" class="maps" src="imagens/mapas.jfif" alt="mapas">
+                    <img id="imagem-minimapa" class="mini_map" src="imagens/Valorant-Minimap.png" alt="mini-mapas">
                 </div>
             </article>
         </div>
@@ -161,27 +190,104 @@
     <section id="news">
         <div class="news">
             <h2>Notícias</h2>
-            <article>
-                <h3>Lançamento para consoles</h3>
+            <ul class="container-flex lista-veiculos">
+                <li class="noticia">
+                    <h3>Notas da Atualização 9.06 do VALORANT</h3>
+                <br>
+                <p>Atualizações em mecânica de jogo e comportamento, dicas para jogadores iniciantes e muito mais.</p>
+                <article class="noti">
+                    <a href="https://playvalorant.com/pt-br/news/game-updates/valorant-patch-notes-906/" target="_blank" rel="noopener noreferrer">
+                        <img src="imagens/noticia_1.webp" alt="noticia 1">
+                    </a>
+                    <div class="overlay-imagem-link">
+                        <a href="https://playvalorant.com/pt-br/news/game-updates/valorant-patch-notes-906/" target="_blank" rel="noopener noreferrer">
+                            Confira no site oficial.
+                        </a>
+                    </div>
+                </article>
+                <button><a href="https://playvalorant.com/pt-br/news/game-updates/valorant-patch-notes-906/" target="_blank" rel="noopener noreferrer">Leia mais</a></button>
+                </li>
+                <li class="noticia item-central">
+                    <h3>SINGULARIDADE // TRAILER DE REVELAÇÃO DE SKIN</h3>
+                <br>
+                <p>O que tem dentro de um buraco negro? Singularidade está de volta.</p>
+                <article class="noti">
+                    <a href="https://www.youtube.com/watch?v=-y4bCNjHk1U" target="_blank" rel="noopener noreferrer">
+                        <img src="imagens/noticia_5.webp" alt="noticia 5">
+                    </a>
+                    <div class="overlay-imagem-link">
+                        <a href="https://www.youtube.com/watch?v=-y4bCNjHk1U" target="_blank" rel="noopener noreferrer">
+                            Confira no site oficial.
+                        </a>
+                    </div>
+                </article>
+                <button><a href="https://playvalorant.com/pt-br/news/game-updates/valorant-patch-notes-906/" target="_blank" rel="noopener noreferrer">Leia mais</a></button>
+                </li>
+                <li class="noticia">
+                    <h3>Comportamento dos jogadores, balanceamento e anticheat // Atualizações Dev</h3>
+                <br>
+                <p>Nossa última Atualização Dev antes de 2025.</p>
+                <article class="noti">
+                    <a href="https://www.youtube.com/watch?v=bcla8wtg8dg" target="_blank" rel="noopener noreferrer">
+                        <img src="imagens/noticia_6.webp" alt="noticia 6">
+                    </a>
+                    <div class="overlay-imagem-link">
+                        <a href="https://www.youtube.com/watch?v=bcla8wtg8dg" target="_blank" rel="noopener noreferrer">
+                            Confira no site oficial.
+                        </a>
+                    </div>
+                </article>
+                <button><a href="https://playvalorant.com/pt-br/news/game-updates/valorant-patch-notes-906/" target="_blank" rel="noopener noreferrer">Leia mais</a></button>
+                </li>
+                <li class="noticia">
+                    <h3>Trailer de Mecânica da Vyse</h3>
+                <br>
+                <p>Veja a grande estrategista Vyse em ação antes de seu lançamento no Episódio 09: Ato II.</p>
+                <article class="noti">
+                    <a href="https://www.youtube.com/watch?v=TuSs5Dg5msU" target="_blank" rel="noopener noreferrer">
+                        <img src="imagens/noticia_2.webp" alt="noticia 2">
+                    </a>
+                    <div class="overlay-imagem-link">
+                        <a href="https://www.youtube.com/watch?v=TuSs5Dg5msU" target="_blank" rel="noopener noreferrer">
+                            Confira no site oficial.
+                        </a>
+                    </div>
+                </article>
+                <button><a href="https://www.youtube.com/watch?v=TuSs5Dg5msU" target="_blank" rel="noopener noreferrer">Leia mais</a></button>
+                </li>
+                <li class="noticia item-central">
+                    <h3>Vanguard x VALORANT</h3>
+                <br>
+                <p>Como a equipe de anticheat segue acompanhando a evolução dos trapaceiros.</p>
+                <article class="noti">
+                    <a href="https://playvalorant.com/pt-br/news/game-updates/vanguard-x-valorant/" target="_blank" rel="noopener noreferrer">
+                        <img src="imagens/noticia_3.webp" alt="noticia 3">
+                    </a>
+                    <div class="overlay-imagem-link">
+                        <a href="https://playvalorant.com/pt-br/news/game-updates/vanguard-x-valorant/" target="_blank" rel="noopener noreferrer">
+                            Confira no site oficial.
+                        </a>
+                    </div>
+                </article>
+                <button><a href="https://playvalorant.com/pt-br/news/game-updates/vanguard-x-valorant/" target="_blank" rel="noopener noreferrer">Leia mais</a></button>
+                </li>
+                <li class="noticia">
+                    <h3>Lançamento para consoles</h3>
                 <br>
                 <p>Atualização sobre a disponibilidade regional do VALORANT para console.</p>
-                <p>Confira agora no site oficial.</p>
-                <button><a href="https://playvalorant.com/pt-br/news/game-updates/about-valorant-console-availability/">Leia mais</a></button>
-            </article>
-            <article>
-                <h3>Torneio VCT</h3>
-                <br>
-                <p>O torneio Valorant Champions Tour está em andamento, com as melhores equipes do mundo competindo.</p>
-                <p>Confira agora no site oficial.</p>
-                <button><a href="https://valorantesports.com/pt-BR/news/vct-game-changers-brazil-escalaes-oficiais-da-etapa-2">Leia mais</a></button>
-            </article>
-            <article>
-                <h3>ATUALIZAÇÃO 9.02</h3>
-                <br>
-                <p>Treinamento Básico disponível no PC, Icebox disponível nos consoles.</p>
-                <p>Confira agora no site oficial.</p>
-                <button><a href="https://playvalorant.com/pt-br/news/game-updates/valorant-patch-notes-902/">Leia mais</a></button>
-            </article>
+                <article class="noti">
+                    <a href="https://playvalorant.com/pt-br/news/game-updates/about-valorant-console-availability/" target="_blank" rel="noopener noreferrer">
+                        <img src="imagens/noticia_4.webp" alt="noticia 4">
+                    </a>
+                    <div class="overlay-imagem-link">
+                        <a href="https://playvalorant.com/pt-br/news/game-updates/about-valorant-console-availability/" target="_blank" rel="noopener noreferrer">
+                            Confira no site oficial.
+                        </a>
+                    </div>
+                </article>
+                <button><a href="https://playvalorant.com/pt-br/news/game-updates/about-valorant-console-availability/" target="_blank" rel="noopener noreferrer">Leia mais</a></button>
+                </li>
+            </ul>
         </div>
     </section>
     <section id="extra">
@@ -190,7 +296,14 @@
             <article>
                 <h3>Como subir de rank</h3>
                 <p>Aqui está um e-book de minha autoria com dicas sobre o jogo.</p>
-                <embed src="10-maneiras-de-como-subir-de-rank-no-Valorant-focando-em-melhorar-a-mira-e-outros-aspectos-important.pdf" type="application/pdf">
+                <div id="pdf-container">
+                    <div id="pdf-controls">
+                        <button id="prev-page">Página Anterior</button>
+                        <button id="next-page">Próxima Página</button>
+                        <span>Página: <span id="page-num"></span> / <span id="page-count"></span></span>
+                    </div>
+                    <canvas id="pdf-render"></canvas>
+                </div>
             </article>
         </div>
     </section>
@@ -198,7 +311,7 @@
         <h2>Dúvidas</h2>
         <div class="form-container">
             <h2>TIRE SUAS DÚVIDAS</h2>
-            <form action="/enviar_formulario" method="post">
+            <form id="form-deposito" action="/enviar_formulario" method="post">
                 <label for="nome">Nome:</label>
                 <input type="text" id="nome" name="nome" required>
                 <label for="email">E-mail:</label>
@@ -209,6 +322,10 @@
                 <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
                 <input type="submit" value="Enviar">
             </form>
+            <!-- Notificação -->
+            <div id="notification" class="notification">
+                Formulário enviado com sucesso!
+            </div>
         </div>
     </section>
     <footer>
@@ -217,5 +334,7 @@
         <img class="VZ" src="imagens/VZ.png" alt="VZ">
         <img class="vava" src="imagens/vava.png" alt="time valorant">
     </footer>
+    <script src="./main.js"></script>
+    <script src="https://mozilla.github.io/pdf.js/build/pdf.js"></script>
 </body>
 </html>
