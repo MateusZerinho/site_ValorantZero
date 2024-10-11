@@ -457,3 +457,21 @@ footer img {
     margin-top: 10px;
     width: 30px;
 }
+
+/* Estilizando a barra de rolagem */
+::-webkit-scrollbar {
+    width: 12px; /* Largura da barra de rolagem */
+    background-color: #1f1f1f; /* Cor de fundo da barra de rolagem */
+}
+
+/* Estilizando o thumb (a parte que se move) da barra de rolagem */
+::-webkit-scrollbar-thumb {
+    background-color: #b50e12; /* Cor da parte que rola */
+    border-radius: 6px; /* Deixa as bordas arredondadas */
+    border: 3px solid #1f1f1f; /* Borda para deixar uma pequena margem */
+}
+
+/* Estilizando o thumb ao passar o mouse */
+::-webkit-scrollbar-thumb:hover {
+    background-color: #ff4747; /* Cor ao passar o mouse na barra */
+}
